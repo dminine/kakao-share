@@ -12,10 +12,12 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.0.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20'
     }
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     namespace "com.lifree1.kakao_share"
@@ -45,6 +47,7 @@ android {
 repositories {
     google()
     mavenCentral()
+    maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
 }
 
 
@@ -55,4 +58,5 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation "com.kakao.sdk:v2-share:2.19.0" // 메시지(카카오톡 공유)
 }
