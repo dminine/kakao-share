@@ -17,7 +17,7 @@ import type {
 declare const Kakao: any;
 
 export class KakaoShareWeb extends WebPlugin implements KakaoSharePlugin {
-  init(option: { appKey: string }): any {
+  initSDK(option: { appKey: string }): any {
     if(!Kakao.isInitialized()) {
       Kakao.init(option.appKey);
     }

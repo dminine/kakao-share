@@ -1,5 +1,5 @@
 export interface KakaoSharePlugin {
-  init(option: { appKey: string }): any;
+  initSDK(option: { appKey: string }): any;
   cleanup(): void;
   createCustomButton(settings: ButtonSettings & CustomSettings): void;
   createDefaultButton(

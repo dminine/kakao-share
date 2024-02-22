@@ -12,7 +12,7 @@ import com.kakao.sdk.template.model.DefaultTemplate
 class KakaoShare {
     private val TAG = "KakaoShare"
 
-    fun initd(context: Context, appKey: String) {
+    fun initSDK(context: Context, appKey: String) {
         KakaoSdk.init(context, appKey)
     }
 

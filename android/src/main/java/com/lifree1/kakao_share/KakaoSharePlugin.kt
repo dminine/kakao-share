@@ -14,9 +14,9 @@ class KakaoSharePlugin : Plugin() {
     private val implementation = KakaoShare()
 
     @PluginMethod
-    fun init(call: PluginCall) {
+    fun initSDK(call: PluginCall) {
         val appKey = call.getString("appKey")
-        implementation.initd(this.activity, appKey!!)
+        implementation.initSDK(this.activity, appKey!!)
     }
 
     @PluginMethod

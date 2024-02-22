@@ -13,7 +13,7 @@ npx cap sync
 
 <docgen-index>
 
-* [`init(...)`](#init)
+* [`initSDK(...)`](#initsdk)
 * [`cleanup()`](#cleanup)
 * [`createCustomButton(...)`](#createcustombutton)
 * [`createDefaultButton(...)`](#createdefaultbutton)
@@ -32,10 +32,10 @@ npx cap sync
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### init(...)
+### initSDK(...)
 
 ```typescript
-init(option: { appKey: string; }) => any
+initSDK(option: { appKey: string; }) => any
 ```
 
 | Param        | Type                             |
