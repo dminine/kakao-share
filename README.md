@@ -35,12 +35,14 @@ npx cap sync
 ### init(...)
 
 ```typescript
-init(option: { appKey: string; }) => void
+init(option: { appKey: string; }) => any
 ```
 
 | Param        | Type                             |
 | ------------ | -------------------------------- |
 | **`option`** | <code>{ appKey: string; }</code> |
+
+**Returns:** <code>any</code>
 
 --------------------
 

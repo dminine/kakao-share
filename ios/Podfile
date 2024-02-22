@@ -9,8 +9,14 @@ end
 
 target 'Plugin' do
   capacitor_pods
+  pod 'KakaoSDKCommon'
+  pod 'KakaoSDKShare'
+  pod 'KakaoSDKTemplate'
 end
 
 target 'PluginTests' do
   capacitor_pods
+  pod 'KakaoSDKCommon'
+  pod 'KakaoSDKShare'
+  pod 'KakaoSDKTemplate'
 end
