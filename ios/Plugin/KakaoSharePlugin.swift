@@ -17,30 +17,32 @@ public class KakaoSharePlugin: CAPPlugin {
     @objc func sendDefault(_ call: CAPPluginCall) {
         let content = call.getObject("content") ?? [:]
         if let link = content["link"] as? JSObject {
-            let templateJsonStringData =
-                    """
-
-                        "object_type": "feed",
-                        "content": {
-                            "title": "\(content["title"])",
-                            "description": "\(content["description"])",
-                            "image_url": "\(content["imageUrl"])",
-                            "link": {
-                                "mobile_web_url": "\(link["mobileWebUrl"])",
-                                "web_url": "\(link["webUrl"])"
-                            }
-                        },
-                        "buttons": [
-                            {
-                                "title": "라이프리로 이동",
-                                "link": {
-                                    "mobile_web_url": "\(link["mobileWebUrl"])",
-                                    "web_url": "\(link["webUrl"])"
+            let templateJsonString =
+                                """
+                                {
+                                    "object_type": "feed",
+                                    "content": {
+                                        "title": "\(content["title"] ?? "")",
+                                        "description": "\(content["description"] ?? "")",
+                                        "image_url": "\(content["imageUrl"] ?? "")",
+                                        "link": {
+                                            "mobile_web_url": "\(link["mobileWebUrl"] ?? "")",
+                                            "web_url": "\(link["webUrl"] ?? "")"
+                                        }
+                                    },
+                                    "buttons": [
+                                        {
+                                            "title": "라이프리로 이동",
+                                            "link": {
+                                                "mobile_web_url": "\(link["mobileWebUrl"] ?? "")",
+                                                "web_url": "\(link["webUrl"] ?? "")"
+                                            }
+                                        }
+                                    ]
                                 }
-                            }
-                        ]
-                    }
-                    """.data(using: .utf8)!
+                                """
+            let templateJsonStringData =
+                    templateJsonString.data(using: .utf8)!
 
                     implementation.shareDefault(templateJsonStringData, viewController: (self.bridge?.viewController)!)
         }

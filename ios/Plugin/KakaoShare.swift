@@ -16,6 +16,7 @@ import KakaoSDKTemplate
     @objc public func shareDefault(_ templateJsonStringData: Data, viewController: UIViewController) {
 
         guard let templatable = try? SdkJSONDecoder.custom.decode(FeedTemplate.self, from: templateJsonStringData) else {
+            print("NotDecoded")
             return
         }
 
@@ -38,6 +39,7 @@ import KakaoSDKTemplate
             }
         }
         else {
+            print("KakaoTalkSharingNotAvailable")
             // 카카오톡 미설치: 웹 공유 사용 권장
             // Custom WebView 또는 디폴트 브라우져 사용 가능
             // 웹 공유 예시 코드
